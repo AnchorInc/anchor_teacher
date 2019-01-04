@@ -61,6 +61,11 @@
 		F8DB1E53BCFC414999FD27A7 /* libRNGooglePlaces.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 889379334EA544B1AE5E0FF7 /* libRNGooglePlaces.a */; };
 		C7A3691EE053482A8D6912BC /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DFA696219DB4D71AED8B93B /* libBVLinearGradient.a */; };
 		3A65BE2BC51C40749A1A2E7F /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16011D235A074192A2646A78 /* libRNGestureHandler.a */; };
+		78AA3D2E4D004A4FBD5AC281 /* AvenirLTStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF9C85CE85994C609CC2352F /* AvenirLTStd-Book.otf */; };
+		30EF78C2CCB34B53860E21F3 /* AvenirLTStd-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9F257F68C1FD47F9B843234B /* AvenirLTStd-Heavy.otf */; };
+		AE82B454529746748EA8692A /* AvenirLTStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = CCB451ED4254454895570A9C /* AvenirLTStd-Light.otf */; };
+		23A226045081488996D52CFF /* AvenirLTStd-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5041B99992A64BD2B09D18CE /* AvenirLTStd-Medium.otf */; };
+		01A9858C55754FC4BFB6C6B8 /* AvenirLTStd-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = D645EF0A065649CA96FA0402 /* AvenirLTStd-Roman.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -398,6 +403,11 @@
 		0DFA696219DB4D71AED8B93B /* libBVLinearGradient.a */ = {isa = PBXFileReference; name = "libBVLinearGradient.a"; path = "libBVLinearGradient.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		01558E9C7B464F28B3E95C80 /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; name = "RNGestureHandler.xcodeproj"; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		16011D235A074192A2646A78 /* libRNGestureHandler.a */ = {isa = PBXFileReference; name = "libRNGestureHandler.a"; path = "libRNGestureHandler.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		DF9C85CE85994C609CC2352F /* AvenirLTStd-Book.otf */ = {isa = PBXFileReference; name = "AvenirLTStd-Book.otf"; path = "../app/fonts/AvenirLTStd-Book.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9F257F68C1FD47F9B843234B /* AvenirLTStd-Heavy.otf */ = {isa = PBXFileReference; name = "AvenirLTStd-Heavy.otf"; path = "../app/fonts/AvenirLTStd-Heavy.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CCB451ED4254454895570A9C /* AvenirLTStd-Light.otf */ = {isa = PBXFileReference; name = "AvenirLTStd-Light.otf"; path = "../app/fonts/AvenirLTStd-Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5041B99992A64BD2B09D18CE /* AvenirLTStd-Medium.otf */ = {isa = PBXFileReference; name = "AvenirLTStd-Medium.otf"; path = "../app/fonts/AvenirLTStd-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D645EF0A065649CA96FA0402 /* AvenirLTStd-Roman.otf */ = {isa = PBXFileReference; name = "AvenirLTStd-Roman.otf"; path = "../app/fonts/AvenirLTStd-Roman.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -694,6 +704,11 @@
 				6E7F411063B74FDAA3143982 /* Octicons.ttf */,
 				4AA62A5547954E7E8400E496 /* SimpleLineIcons.ttf */,
 				60C37B9342A3411490C3EED4 /* Zocial.ttf */,
+				DF9C85CE85994C609CC2352F /* AvenirLTStd-Book.otf */,
+				9F257F68C1FD47F9B843234B /* AvenirLTStd-Heavy.otf */,
+				CCB451ED4254454895570A9C /* AvenirLTStd-Light.otf */,
+				5041B99992A64BD2B09D18CE /* AvenirLTStd-Medium.otf */,
+				D645EF0A065649CA96FA0402 /* AvenirLTStd-Roman.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1160,6 +1175,11 @@
 				ABE1A1ECC6A84AF48DB1C129 /* Octicons.ttf in Resources */,
 				B3B4BB1DA07249039BD73862 /* SimpleLineIcons.ttf in Resources */,
 				8F686DA5F29248399FFB1427 /* Zocial.ttf in Resources */,
+				78AA3D2E4D004A4FBD5AC281 /* AvenirLTStd-Book.otf in Resources */,
+				30EF78C2CCB34B53860E21F3 /* AvenirLTStd-Heavy.otf in Resources */,
+				AE82B454529746748EA8692A /* AvenirLTStd-Light.otf in Resources */,
+				23A226045081488996D52CFF /* AvenirLTStd-Medium.otf in Resources */,
+				01A9858C55754FC4BFB6C6B8 /* AvenirLTStd-Roman.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

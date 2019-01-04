@@ -14,6 +14,7 @@ import net.zubricky.AndroidKeyboardAdjust.AndroidKeyboardAdjustPackage;
 
 import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import com.facebook.CallbackManager;
+import com.facebook.FacebookSdk;
 
 import co.apptailor.googlesignin.RNGoogleSigninPackage;
 
@@ -85,5 +86,6 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
+    FacebookSdk.sdkInitialize(getApplicationContext());
   }
 }
