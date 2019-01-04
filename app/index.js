@@ -3,7 +3,7 @@ import { setCustomText } from 'react-native-global-props';
 import { Provider } from 'react-redux';
 import { StatusBar } from 'react-native';
 
-import { MainStack } from './navigation/Router';
+import { MainStackContainer } from './navigation/Router';
 import { colors, store } from './config';
 
 // get rid of annoying yellow box
@@ -25,7 +25,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <MainStack />
+        <MainStackContainer />
       </Provider>
     );
   }

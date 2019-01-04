@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
 
 import { showChatBadge } from '../../actions';
-import { NavStack } from '../../navigation/Router';
+import { NavStackContainer } from '../../navigation/Router';
 
 class Main extends Component {
   componentDidMount() {
@@ -54,7 +54,7 @@ class Main extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <NavStack />
+        <NavStackContainer />
       </View>
     );
   }

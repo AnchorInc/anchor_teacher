@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavigationActions, createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import { NavigationActions, createStackNavigator, createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import {
@@ -71,7 +71,7 @@ const StackConfig = {
   },
   headerMode: 'none',
 };
-export const NavStack = createStackNavigator({
+const NavStack = createStackNavigator({
   Batches: { screen: Tabs },
   TeacherProfile: { screen: TeacherProfile },
   TeacherProfileEditing: { screen: TeacherProfileEditing },
@@ -80,7 +80,9 @@ export const NavStack = createStackNavigator({
   BatchSettings: { screen: BatchSettings },
 }, StackConfig);
 
-export const MainStack = createStackNavigator({
+export const NavStackContainer = createAppContainer(NavStack);
+
+const MainStack = createStackNavigator({
   AppSetup: { screen: AppSetup },
   Login: { screen: Login },
   Main: { screen: Main },
@@ -103,3 +105,5 @@ MainStack.router.getStateForAction = (action, state) => {
 
   return defaultGetStateForAction(action, state);
 };
+
+export const MainStackContainer = createAppContainer(MainStack);
