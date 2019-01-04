@@ -37,5 +37,6 @@ module.exports =  {
         "react/destructuring-assignment": 0,
         "import/no-useless-path-segments": 0,
         "prefer-destructuring": 0,
+        "operator-linebreak": 0,
     }
 };
