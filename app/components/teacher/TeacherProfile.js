@@ -10,57 +10,24 @@ import {
   Platform,
 } from 'react-native';
 import { connect } from 'react-redux';
-import firebase from 'react-native-firebase';
 import StarRating from 'react-native-star-rating';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import { colors, userTypes } from '../../config';
+import { colors } from '../../config';
 import { ListDetail, TouchableDebounce, Spinner } from '../../lib';
 
 const { width, height } = Dimensions.get('window');
 
 class TeacherProfile extends Component {
   state = {
-    uid: this.props.navigation.state.params.uid,
-    teacher: null,
-    action: this.props.navigation.state.params.action,
     batches: [],
     messages: [],
     time: '',
     place: '',
   };
 
-  componentWillMount() {
-    if (this.props.user.type === userTypes.STUDENT) {
-      this.getTeacher();
-    } else {
-      this.setState({ teacher: this.props.user });
-    }
-  }
-
-  getTeacher() {
-    if (!this.state.teacher) {
-      return firebase.firestore().collection('teachers').doc(this.state.uid).get()
-      .then((teacher) => {
-        this.setState({ teacher: teacher.data() });
-      });
-    } return null;
-  }
-
-  completeAction = () => {
-    if (this.state.action === 'account-settings-variant') {
-      this.props.navigation.navigate('TeacherProfileEditing');
-    } else {
-      const chat = {
-        uid: this.state.uid,
-        title: this.state.teacher.displayName,
-      };
-      this.props.navigation.navigate('Chat', { chat });
-    }
-  }
-
   render() {
-    if (this.state.teacher) {
+    if (this.props.user) {
       return (
         <View style={{ flex: 1 }}>
           <StatusBar />
@@ -70,19 +37,19 @@ class TeacherProfile extends Component {
                 <Icon name='arrow-left' size={24} color='white' />
               </TouchableDebounce>
               <Text style={styles.headerTextStyle}>
-                {this.state.teacher.displayName}
+                {this.props.user.displayName}
               </Text>
-              <TouchableDebounce style={styles.iconStyle} onPress={() => this.completeAction()}>
-                <Icon name={this.state.action} size={24} color='white' />
+              <TouchableDebounce style={styles.iconStyle} onPress={() => this.props.navigation.navigate('TeacherProfileEditing')}>
+                <Icon name='account-settings' size={24} color='white' />
               </TouchableDebounce>
             </View>
             <View style={styles.profileContainerStyle}>
-              <Image source={{ uri: this.state.teacher.photoURL }} style={styles.profileStyle} />
+              <Image source={{ uri: this.props.user.photoURL }} style={styles.profileStyle} />
             </View>
           </View>
           <View style={styles.nameContainerStyle}>
             <Text style={styles.nameStyle}>
-              {this.state.teacher.subject}
+              {this.props.user.subject}
             </Text>
             <StarRating
               disabled
@@ -93,29 +60,29 @@ class TeacherProfile extends Component {
               starColor='#ffb300'
               emptyStarColor='#ffb300'
               starSize={25}
-              rating={this.state.teacher.rating}
+              rating={this.props.user.rating}
             />
           </View>
           <ScrollView>
             <ListDetail
               title={'Name'}
-              value={this.state.teacher.displayName}
+              value={this.props.user.displayName}
             />
             <ListDetail
               title={'Subject'}
-              value={this.state.teacher.subject}
+              value={this.props.user.subject}
             />
             <ListDetail
               title={'Email'}
-              value={this.state.teacher.email}
+              value={this.props.user.email}
             />
             <ListDetail
               title={'Phone Number'}
-              value={`+91 ${this.state.teacher.phone}`}
+              value={`+91 ${this.props.user.phone}`}
             />
             <ListDetail
               title={'Price'}
-              value={`\u20b9 ${this.state.teacher.price} Per Class`}
+              value={`\u20b9 ${this.props.user.price} Per Class`}
             />
             <ListDetail
               title={'Timings'}

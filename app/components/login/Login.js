@@ -66,16 +66,6 @@ class Login extends Component {
           <View style={loginContainerStyle}>
             <LoginButton title='Sign in with Facebook' iconName='facebook' onPress={this.props.fbLoginRequest} />
             <LoginButton title='Sign in with Google' iconName='google' onPress={this.props.googleLoginRequest} />
-            <LinearGradient
-              colors={[
-                '#c0c0cB',
-                '#c0c0cB',
-              ]}
-              locations={[0.3, 1]}
-              start={{ x: 1, y: 0 }}
-              end={{ x: 0, y: 1 }}
-              style={{ justifyContent: 'center', alignItems: 'center', alignSelf: 'center', borderRadius: 8, width: 180, height: 40 }}
-            />
           </View>
         </View>
         <Spinner visible={this.props.loading} title='Authenticating' />
