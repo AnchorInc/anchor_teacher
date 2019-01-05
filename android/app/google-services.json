@@ -1,0 +1,143 @@
+{
+  "project_info": {
+    "project_number": "489771714033",
+    "firebase_url": "https://anchorapp-feed3.firebaseio.com",
+    "project_id": "anchorapp-feed3",
+    "storage_bucket": "anchorapp-feed3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489771714033:android:a846335c44a251be",
+        "android_client_info": {
+          "package_name": "com.anchor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "489771714033-po2rcm35q30h1vvo6ns2kac1fib1q96d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.anchor",
+            "certificate_hash": "7e458b2720da1d02b4ba9005adf8c84494e4c404"
+          }
+        },
+        {
+          "client_id": "489771714033-pmjdesh7460oi9bcgan0ida0ra9b9305.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.anchor",
+            "certificate_hash": "b3dc876f13498ce5380ce1068ee12cf408407561"
+          }
+        },
+        {
+          "client_id": "489771714033-sh4c66k741hctc2vrvlfn4bsviiretii.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.anchor",
+            "certificate_hash": "cb2c7f1322ad514099f572c22a577f9229632e3f"
+          }
+        },
+        {
+          "client_id": "489771714033-h8rcam0eaf0p38ee8n30l4a0hfqieskf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.anchor",
+            "certificate_hash": "1dfc3ec81414ad99cfdbcf65bc4e83eb75d3643e"
+          }
+        },
+        {
+          "client_id": "489771714033-ej9vlft4gfm6enq8fsosh135vac9vnu7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2oUTuJYshRVPV4TJ_zjn7OBi55sm0MbQ"
+        },
+        {
+          "current_key": "AIzaSyCGttWR24ng1Y87ruWfjAcGCISGLKz8jUE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "489771714033-ej9vlft4gfm6enq8fsosh135vac9vnu7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "489771714033-uskl634f838u27m0a01vsq7ea2uv6r9b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.anchorinc.anchor"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489771714033:android:63933f8a831d172d",
+        "android_client_info": {
+          "package_name": "com.anchor_teacher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "489771714033-dqsv4qgl14ihnqsstdiief63rabkq5oh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.anchor_teacher",
+            "certificate_hash": "1dfc3ec81414ad99cfdbcf65bc4e83eb75d3643e"
+          }
+        },
+        {
+          "client_id": "489771714033-ej9vlft4gfm6enq8fsosh135vac9vnu7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2oUTuJYshRVPV4TJ_zjn7OBi55sm0MbQ"
+        },
+        {
+          "current_key": "AIzaSyCGttWR24ng1Y87ruWfjAcGCISGLKz8jUE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "489771714033-ej9vlft4gfm6enq8fsosh135vac9vnu7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "489771714033-uskl634f838u27m0a01vsq7ea2uv6r9b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.anchorinc.anchor"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
