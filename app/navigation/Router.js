@@ -18,7 +18,7 @@ import {
 import { colors } from '../config';
 
 const TabNavigatorConfig = {
-  navigationOptions: ({ navigation }) => ({
+  defaultNavigationOptions: ({ navigation }) => ({
     tabBarIcon: ({ focused }) => {
       const { routeName } = navigation.state;
       let iconName;
