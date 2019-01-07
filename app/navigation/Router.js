@@ -1,6 +1,11 @@
 import React from 'react';
-import { NavigationActions, createStackNavigator, createBottomTabNavigator, createAppContainer } from 'react-navigation';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import {
+  NavigationActions,
+  createStackNavigator,
+  createBottomTabNavigator,
+  createAppContainer,
+} from 'react-navigation';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {
   AppSetup,
@@ -23,14 +28,8 @@ const TabNavigatorConfig = {
       const { routeName } = navigation.state;
       let iconName;
       switch (routeName) {
-        case 'Classes':
-          iconName = 'home';
-          break;
         case 'Batches':
           iconName = 'home';
-          break;
-        case 'Search':
-          iconName = 'search';
           break;
         case 'Settings':
           iconName = 'settings';
