@@ -1,6 +1,11 @@
 import React from 'react';
-import { NavigationActions, createStackNavigator, createBottomTabNavigator, createAppContainer } from 'react-navigation';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import {
+  NavigationActions,
+  createStackNavigator,
+  createBottomTabNavigator,
+  createAppContainer,
+} from 'react-navigation';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {
   AppSetup,
@@ -18,19 +23,13 @@ import {
 import { colors } from '../config';
 
 const TabNavigatorConfig = {
-  navigationOptions: ({ navigation }) => ({
+  defaultNavigationOptions: ({ navigation }) => ({
     tabBarIcon: ({ focused }) => {
       const { routeName } = navigation.state;
       let iconName;
       switch (routeName) {
-        case 'Classes':
-          iconName = 'home';
-          break;
         case 'Batches':
           iconName = 'home';
-          break;
-        case 'Search':
-          iconName = 'search';
           break;
         case 'Settings':
           iconName = 'settings';
