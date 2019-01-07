@@ -1,8 +1,4 @@
 <resources>
-<<<<<<< HEAD
     <string name="app_name">Anchor Teacher</string>
-=======
-    <string name="app_name">Anchor_Teacher</string>
->>>>>>> 16cbbbc25ea2c1eebd5e9505b3c0bf07d474f2fd
     <string name="facebook_app_id">747273528978848</string>
 </resources>
