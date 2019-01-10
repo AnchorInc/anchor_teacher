@@ -1,6 +1,14 @@
 import firebase from 'react-native-firebase';
 import { eventChannel } from 'redux-saga';
-import { put, takeLatest, all, call, cancel, take, takeEvery } from 'redux-saga/effects';
+import {
+  put,
+  takeLatest,
+  all,
+  call,
+  cancel,
+  take,
+  takeEvery,
+} from 'redux-saga/effects';
 
 import { actionTypes } from '../config';
 import { syncMessages, syncChats, createChat } from '../actions';
@@ -28,11 +36,11 @@ function* messageListenerSaga(action) {
 }
 
 // gets all the chats for the user
-function* chatListenerSaga(action) {
+function* chatListenerSaga() {
   const ref = firebase.firestore();
   if (!ref) yield cancel();
 
-  const channel = yield call(chatEventListener, ref, action.id);
+  const channel = yield call(chatEventListener, ref);
 
   while (firebase.auth().currentUser) {
     // get the data emitted from the channel
@@ -43,6 +51,7 @@ function* chatListenerSaga(action) {
 }
 
 function* createChatSaga(action) {
+  console.log('creating a new chat');
   const ref = firebase.firestore().collection('conversations');
 
   yield call([ref, ref.add], { teacherId: firebase.auth().currentUser.uid, studentId: action.studentUID });
@@ -61,8 +70,11 @@ function* updateMessagesSaga(action) {
   const chatId = yield call(getChatId, action);
 
   if (chatId) {
-    const ref = firebase.firestore().collection('conversations').doc(chatId).collection('messages');
-    yield call([ref, ref.add], action.chat);
+    const messageRef = firebase.firestore().collection('conversations').doc(chatId).collection('messages');
+    yield call([messageRef, messageRef.add], action.chat);
+
+    const latestMessageRef = firebase.firestore().collection('conversations').doc(chatId);
+    yield call([latestMessageRef, latestMessageRef.update], { latestMessage: action.chat });
   } else {
     const ref = firebase.firestore().collection('conversations').doc();
     yield call([firebase.firestore(), firebase.firestore().runTransaction], async (transaction) => {

@@ -29,8 +29,7 @@ class ChatsOverview extends Component {
       this.state.chats.sort((x, y) => { return y.latestMessage.timeStamp - x.latestMessage.timeStamp; });
     } else {
       this.state.chats.forEach((chat) => {
-        const idType = 'studentId';
-        if (chat[idType] === nextProps.chats[0][idType]) {
+        if (chat.studentId === nextProps.chats[0].studentId) {
           const index = this.state.chats.indexOf(chat);
           this.state.chats[index] = nextProps.chats[0];
           this.state.chats.sort((x, y) => { return y.latestMessage.timeStamp - x.latestMessage.timeStamp; });
@@ -52,7 +51,7 @@ class ChatsOverview extends Component {
         text={item.latestMessage.text}
         timeStamp={item.latestMessage.timeStamp}
         unread={item.latestMessage.unread}
-        teacherUID={item.teacherId}
+        teacherUID={this.props.user.uid}
         studentUID={item.studentId}
         onPress={() => {
           const chat = {
@@ -79,9 +78,7 @@ class ChatsOverview extends Component {
       </View>
     );
   }
-
 }
-
 
 const mapStateToProps = (state) => {
   let user;

@@ -20,8 +20,8 @@ export const syncChats = (chats) => {
   return { type: actionTypes.CHAT.SYNC, chats };
 };
 
-export const createChat = () => {
-  return { type: actionTypes.CHAT.CREATE };
+export const createChat = (action) => {
+  return { type: actionTypes.CHAT.CREATE, action };
 };
 
 export const deleteChat = (studentUID) => {
