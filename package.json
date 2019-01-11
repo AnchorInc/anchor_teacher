@@ -16,7 +16,7 @@
     "react-native-android-keyboard-adjust": "^1.2.0",
     "react-native-dialogbox": "^0.6.10",
     "react-native-fbsdk": "^0.8.0",
-    "react-native-firebase": "^5.1.1",
+    "react-native-firebase": "^5.2.0",
     "react-native-gesture-handler": "^1.0.12",
     "react-native-global-props": "^1.1.5",
     "react-native-google-places": "^2.5.2",
