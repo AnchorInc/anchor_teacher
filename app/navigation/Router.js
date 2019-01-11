@@ -18,6 +18,8 @@ import {
   TeacherProfileEditing,
   Settings,
   BatchSettings,
+  Schedule,
+  Payment,
 } from '../components';
 
 import { colors } from '../config';
@@ -31,8 +33,14 @@ const TabNavigatorConfig = {
         case 'Batches':
           iconName = 'home';
           break;
+        case 'Schedule':
+          iconName = 'calendar-blank';
+          break;
         case 'Settings':
           iconName = 'settings';
+          break;
+        case 'Payment':
+          iconName = 'credit-card';
           break;
         default:
           iconName = 'home';
@@ -61,6 +69,8 @@ const TabNavigatorConfig = {
 
 export const Tabs = createBottomTabNavigator({
   Batches: { screen: Batches },
+  Schedule: { screen: Schedule },
+  Payment: { screen: Payment },
   Settings: { screen: Settings },
 }, TabNavigatorConfig);
 

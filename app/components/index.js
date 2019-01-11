@@ -5,3 +5,5 @@ export { Main } from './main';
 export { Settings } from './settings';
 export { AppSetup } from './setup';
 export { TeacherProfile, TeacherProfileEditing } from './teacher';
+export { Schedule } from './schedule';
+export { Payment } from './payments';
