@@ -74,7 +74,8 @@ import com.android.build.OutputFile
  */
 
 project.ext.react = [
-    entryFile: "index.js"
+    entryFile: "index.js",
+    bundleComman: "ram-bundle"
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
@@ -152,7 +153,11 @@ dependencies {
     implementation project(':react-native-fbsdk')
     implementation project(":react-native-android-keyboard-adjust")
     implementation project(':react-native-linear-gradient')
-
+    implementation (project(':react-native-google-places')) {
+            exclude group: 'com.google.android.gms', module: 'play-services-base'
+            exclude group: 'com.google.android.gms', module: 'play-services-places'
+            exclude group: 'com.google.android.gms', module: 'play-services-location'
+        }
     // Firebase dependencies
     implementation "com.google.firebase:firebase-core:16.0.4"
 
@@ -166,6 +171,8 @@ dependencies {
     implementation "com.google.firebase:firebase-messaging:17.3.4"
     implementation 'me.leolin:ShortcutBadger:1.1.21@aar' // <-- Add this line if you wish to use badge on Android
 
-    // Firebase dependencies
+      // Firebase and Google Places dependencies
+    implementation "com.google.android.gms:play-services-base:${rootProject.ext.googlePlayServicesVersion}"
     implementation "com.google.android.gms:play-services-places:${rootProject.ext.googlePlayServicesVersion}"
+    implementation "com.google.android.gms:play-services-location:${rootProject.ext.googlePlayServicesVersion}"
 }
