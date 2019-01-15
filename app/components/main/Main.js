@@ -43,7 +43,7 @@ class Main extends Component {
     this.onMessage();
   }
 
-  openScreen = (screen, data = null) => {
+  openScreen = (screen, data) => {
     console.log(data);
     if (data) {
       return this.props.navigation.navigate(screen, { chat: data });

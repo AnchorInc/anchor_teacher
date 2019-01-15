@@ -11,7 +11,7 @@ export const backgroundMessageListener = async (message) => {
   .setTitle(data.title)
   .setBody(data.body)
   .setSound('default')
-  .setData({ senderID: data.senderId, title: data.title, screen: data.screen })
+  .setData({ senderID: data.senderID, title: data.title, screen: data.screen })
   .android.setSmallIcon('notification')
   .android.setColor(colors.primary.normal)
   .android.setAutoCancel(true)
