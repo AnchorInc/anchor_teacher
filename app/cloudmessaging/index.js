@@ -17,7 +17,7 @@ export const backgroundMessageListener = async (message) => {
   .android.setAutoCancel(true)
   .android.setLargeIcon(data.icon)
   .android.setChannelId(data.channel)
-  .android.setPriority(firebase.notifications.Android.Priority.Max);
+  .android.setPriority(firebase.notifications.Android.Priority.High);
 
   if (notification.android.channelId === 'chat_channel') {
     // build an action
