@@ -8,8 +8,6 @@ import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 
 import com.BV.LinearGradient.LinearGradientPackage;
 
-import com.arttitude360.reactnative.rngoogleplaces.RNGooglePlacesPackage;
-
 import net.zubricky.AndroidKeyboardAdjust.AndroidKeyboardAdjustPackage;
 
 import com.facebook.reactnative.androidsdk.FBSDKPackage;
@@ -57,7 +55,6 @@ public class MainApplication extends Application implements ReactApplication {
           new MainReactPackage(),
           new RNGestureHandlerPackage(),
           new LinearGradientPackage(),
-          new RNGooglePlacesPackage(),
           new FBSDKPackage(mCallbackManager),
           new RNGoogleSigninPackage(),
           new SplashScreenReactPackage(),
