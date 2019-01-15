@@ -19,7 +19,6 @@
     "react-native-firebase": "^5.2.0",
     "react-native-gesture-handler": "^1.0.12",
     "react-native-global-props": "^1.1.5",
-    "react-native-google-places": "^2.5.2",
     "react-native-google-signin": "^1.0.2",
     "react-native-keyboard-aware-scroll-view": "^0.8.0",
     "react-native-linear-gradient": "^2.5.3",
