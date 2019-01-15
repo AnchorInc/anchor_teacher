@@ -29,17 +29,20 @@ class Chat extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.state.messages.length === 0) {
-      const messages = nextProps.messages.reverse();
-      this.setState({ messages });
-    } else {
-      nextProps.messages.forEach((message) => {
-        if (this.state.myLatestMessage) {
-          if (new Date(message.timeStamp).getTime() !== new Date(this.state.myLatestMessage.timeStamp).getTime()) {
-            this.setState({ messages: nextProps.messages.concat(this.state.messages) });
+    console.log(nextProps);
+    if (nextProps.messages) {
+      if (this.state.messages.length === 0) {
+        const messages = nextProps.messages.reverse();
+        this.setState({ messages });
+      } else {
+        nextProps.messages.forEach((message) => {
+          if (this.state.myLatestMessage) {
+            if (new Date(message.timeStamp).getTime() !== new Date(this.state.myLatestMessage.timeStamp).getTime()) {
+              this.setState({ messages: nextProps.messages.concat(this.state.messages) });
+            }
           }
-        }
-      });
+        });
+      }
     }
   }
 
