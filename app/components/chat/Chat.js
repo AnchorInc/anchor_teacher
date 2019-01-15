@@ -29,7 +29,6 @@ class Chat extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
     if (!nextProps.messages) return;
 
     if (this.state.messages.length === 0) {
