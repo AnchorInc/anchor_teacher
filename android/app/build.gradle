@@ -158,14 +158,17 @@ dependencies {
             exclude group: 'com.google.android.gms', module: 'play-services-places'
             exclude group: 'com.google.android.gms', module: 'play-services-location'
         }
+
+    implementation project(':react-native-maps')
+
     // Firebase dependencies
     implementation "com.google.firebase:firebase-core:16.0.4"
 
     // Firebase Auth
-    implementation "com.google.firebase:firebase-auth:16.0.5"
+    implementation 'com.google.firebase:firebase-auth:17.0.0'
 
     // Firestore
-    implementation "com.google.firebase:firebase-firestore:17.1.2"
+    implementation "com.google.firebase:firebase-firestore:19.0.2"
 
     // Cloud Messaging
     implementation "com.google.firebase:firebase-messaging:17.3.4"
@@ -176,3 +179,5 @@ dependencies {
     implementation "com.google.android.gms:play-services-places:${rootProject.ext.googlePlayServicesVersion}"
     implementation "com.google.android.gms:play-services-location:${rootProject.ext.googlePlayServicesVersion}"
 }
+
+com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true

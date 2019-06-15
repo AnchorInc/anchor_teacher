@@ -7,23 +7,25 @@ import {
   Text,
   Button,
   TimePickerAndroid,
+  TouchableOpacity,
 } from 'react-native';
 import { connect } from 'react-redux';
 import { TextField } from 'react-native-material-textfield';
 import RNGooglePlaces from 'react-native-google-places';
+import  MapView from 'react-native-maps';
 import moment from 'moment';
-import { TextCheckbox } from './';
+import LinearGradient from 'react-native-linear-gradient';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 // import firebase from 'react-native-firebase';
 
 import { Header } from '../header';
 import { FAB } from '../../lib';
-import { colors, userTypes } from '../../config';
+import { colors } from '../../config';
 
 const { width } = Dimensions.get('window');
 
 class BatchSettings extends Component {
   state = {
-    teacher: null,
     batch: {
       location: null,
       size: null,
@@ -41,14 +43,6 @@ class BatchSettings extends Component {
       endTime: null,
     },
   };
-
-  componentWillMount() {
-    if (this.props.user.type === userTypes.STUDENT) {
-      console.log('Student Batch Settings not yet implemented');
-    } else {
-      this.setState({ teacher: this.props.user });
-    }
-  }
 
   setLocation = () => {
     RNGooglePlaces.openPlacePickerModal().then((place) => {
@@ -90,25 +84,32 @@ class BatchSettings extends Component {
 
   showStartTime = () => {
     if (this.state.batch.startTime) {
-      return (<Text style={{ ...styles.containerStyle, marginTop: 15, marginLeft: 15 }}>
+      return (
+      <Text style={{ ...styles.containerStyle, marginTop: 15, marginLeft: 15 }}>
         {moment(this.state.batch.startTime).format('LT')}
-      </Text>);
+      </Text>
+      );
     }
     return null;
   }
 
   showEndTime = () => {
     if (this.state.batch.endTime) {
-      return (<Text style={{ ...styles.containerStyle, marginTop: 15, marginLeft: 15 }}>
+      return (
+      <Text style={{ ...styles.containerStyle, marginTop: 15, marginLeft: 15 }}>
         {moment(this.state.batch.endTime).format('LT')}
-      </Text>);
+      </Text>
+      );
     }
     return null;
   }
 
   displayLocation = () => {
     if (this.state.batch.location) {
-      return <Text style={{ ...styles.containerStyle, marginTop: 15, marginLeft: 15 }}>{this.state.batch.location.address}</Text>;
+      console.log(this.state.batch.location);
+      return (
+        <Text>{this.state.batch.location.name}</Text>
+      );
     }
     return null;
   }
@@ -128,32 +129,22 @@ class BatchSettings extends Component {
         >
           {this.displayLocation()}
           <View style={{ ...styles.containerStyle, margin: 15 }}>
-            <Button
-              style={styles.containerStyle}
-              onPress={this.setLocation}
-              title="Set Location"
-            />
             <TextField
               containerStyle={styles.textInputStyle}
-              label='Maximum Size'
-              value={this.state.maxSize}
-              keyboardType='numeric'
-              returnKeyType='next'
+              label='Class Name'
+              value={this.state.className}
               titleFontSize={14}
-              renderAccessory={this.showClearTextButton}
               ref={this.maxSizeRef}
               tintColor={colors.primary.light}
             />
-            <TextCheckbox
-              text='Sunday'
-              value={this.state.batch.days.Sunday}
-              onValueChange={value => this.setState((prevState) => {
-                  const newState = prevState;
-                  newState.batch.days.Sunday = value;
-                  return newState;
-                })
-              }
-            />
+            <TouchableOpacity activeOpacity={0.3} style={{ alignSelf: 'center', elevation: 10, padding: 10 }} onPress={this.setLocation}>
+              <LinearGradient colors={[colors.secondary.light, colors.secondary.normal]} style={styles.buttonStyle} start={{ x: 0, y: 1 }} end={{ x: 1, y: 0 }}>
+                <Icon name='map-marker' size={20} color='white' style={{ padding: 3 }} />
+                <Text style={styles.textStyle}>
+                  Set Location
+                </Text>
+              </LinearGradient>
+            </TouchableOpacity>
             <Button
               style={styles.containerStyle}
               onPress={this.pickStartTime}
@@ -183,6 +174,20 @@ const styles = {
     paddingLeft: 15,
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
+  },
+  textStyle: {
+    fontSize: 17,
+    color: 'white',
+    fontFamily: 'AvenirLTStd-Heavy',
+    padding: 3, 
+  },
+  buttonStyle: {
+    width: 0.4 * width,
+    height: 50,
+    borderRadius: 37.5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
   },
 };
 
