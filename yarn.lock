@@ -5577,11 +5577,6 @@ react-native-global-props@^1.1.5:
   resolved "https://registry.yarnpkg.com/react-native-global-props/-/react-native-global-props-1.1.5.tgz#443e0ffc89d5402fa20ebedf37bcbca6d861c34d"
   integrity sha512-QDeAdRel6zyJfbgyFxZi9QXZe78OdlANxJae0rJn76uTqdt/A+iWBVjJy3NmaN/fpKy0uV0HhW6Hu4xM0QCisQ==
 
-react-native-google-places@^3.0.5:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/react-native-google-places/-/react-native-google-places-3.0.5.tgz#270d7bb126760215a0f7112b7c513410212f5935"
-  integrity sha512-Ov70BAi9yXlruQ5qOHUpj78Kcb/uBMcN9fE6C42EgyfYAYL9v/szcylkqEXvyGjJo+2Jx9bTLiQtWlKNOHQPdQ==
-
 react-native-google-signin@^1.0.2:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/react-native-google-signin/-/react-native-google-signin-1.2.3.tgz#700943177a55cd8668a8fb85e370bcf1cb920d1e"
