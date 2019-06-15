@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { View, FlatList, Platform } from 'react-native';
 import { connect } from 'react-redux';
+import firebase from 'react-native-firebase';
 import AndroidKeyboardAdjust from 'react-native-android-keyboard-adjust';
 
 import { Header } from '../header';
 import { updateMessages, getMessages, hideChatBadge } from '../../actions';
-import { ChatBubble, Input } from './';
+import { ChatBubble, Input } from '.';
 
 class Chat extends Component {
   constructor(props) {
@@ -37,7 +38,7 @@ class Chat extends Component {
     } else {
       nextProps.messages.forEach((message) => {
         if (this.state.myLatestMessage) {
-          if (new Date(message.timeStamp).getTime() !== new Date(this.state.myLatestMessage.timeStamp).getTime()) {
+          if (message.timeStamp !== this.state.myLatestMessage.timeStamp) {
             this.setState({ messages: nextProps.messages.concat(this.state.messages) });
           }
         }
@@ -48,7 +49,7 @@ class Chat extends Component {
   onSend = (message) => {
     const messageData = {
       text: message.trim(),
-      timeStamp: new Date(),
+      timeStamp: firebase.firestore.Timestamp.now(),
       senderName: this.props.user.displayName,
       senderID: this.props.user.uid,
       recipientID: this.props.navigation.state.params.chat.uid,

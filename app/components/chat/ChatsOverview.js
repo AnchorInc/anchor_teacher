@@ -3,7 +3,7 @@ import { View, FlatList, Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 import DialogBox from 'react-native-dialogbox';
 
-import { ChatDetail } from './';
+import { ChatDetail } from '.';
 import { getChats, hideChatBadge } from '../../actions';
 import { Header } from '../header';
 
