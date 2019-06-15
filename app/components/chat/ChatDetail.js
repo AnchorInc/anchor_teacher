@@ -41,6 +41,7 @@ class ChatDetail extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
         <TouchableDebounce onPress={this.props.onPress} onLongPress={() => this.onLongPress()}>
           {this.showDeleteChatModal()}
