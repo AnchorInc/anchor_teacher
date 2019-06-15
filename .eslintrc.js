@@ -1,4 +1,4 @@
-module.exports =  {
+module.exports = {
     "parser": "babel-eslint",
     "parserOptions": {
         "ecmaVersion": 6,
@@ -35,8 +35,8 @@ module.exports =  {
         "no-underscore-dangle": 0,
         "jsx-a11y/href-no-hash": 0,
         "react/destructuring-assignment": 0,
-        "import/no-useless-path-segments": 0,
         "prefer-destructuring": 0,
-        "operator-linebreak": 0,
+        "react/no-access-state-in-setstate": 0,
+        "import/no-cycle": 0,
     }
 };
