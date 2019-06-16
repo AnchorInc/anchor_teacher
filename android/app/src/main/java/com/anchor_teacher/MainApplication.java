@@ -66,7 +66,8 @@ public class MainApplication extends Application implements ReactApplication {
           new RNFirebaseFirestorePackage(),
           new RNFirebaseMessagingPackage(),
           new RNFirebaseNotificationsPackage(),
-          new AndroidKeyboardAdjustPackage()
+          new AndroidKeyboardAdjustPackage(),
+          new MapsPackage()
       );
     }
 

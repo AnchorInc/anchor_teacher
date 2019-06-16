@@ -108,7 +108,16 @@ class BatchSettings extends Component {
     if (this.state.batch.location) {
       console.log(this.state.batch.location);
       return (
-        <Text>{this.state.batch.location.name}</Text>
+        <MapView
+          liteMode
+          initialRegion={{
+            latitude: this.state.batch.location.latitude,
+            longitude: this.state.batch.location.longitude,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          }}
+          style={{ width: 0.85 * width, height: 200, marginBottom: 10 }}
+        />
       );
     }
     return null;
