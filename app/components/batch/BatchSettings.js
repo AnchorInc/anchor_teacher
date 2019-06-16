@@ -11,12 +11,9 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import { TextField } from 'react-native-material-textfield';
-import RNGooglePlaces from 'react-native-google-places';
-import  MapView from 'react-native-maps';
 import moment from 'moment';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-// import firebase from 'react-native-firebase';
 
 import { Header } from '../header';
 import { FAB } from '../../lib';
@@ -27,7 +24,6 @@ const { width } = Dimensions.get('window');
 class BatchSettings extends Component {
   state = {
     batch: {
-      location: null,
       size: null,
       maxSize: null,
       days: {
@@ -45,13 +41,7 @@ class BatchSettings extends Component {
   };
 
   setLocation = () => {
-    RNGooglePlaces.openPlacePickerModal().then((place) => {
-      this.setState((prevState) => {
-        const newState = prevState;
-        newState.batch.location = place;
-        return newState;
-      });
-    }).catch(error => console.log('Google Places Place Picker Error:', error));
+    console.log('setting location');
   }
 
   pickStartTime = () => {
@@ -104,16 +94,6 @@ class BatchSettings extends Component {
     return null;
   }
 
-  displayLocation = () => {
-    if (this.state.batch.location) {
-      console.log(this.state.batch.location);
-      return (
-        <Text>{this.state.batch.location.name}</Text>
-      );
-    }
-    return null;
-  }
-
   save = () => {
     console.log('Saving Batch!');
   }
@@ -127,7 +107,6 @@ class BatchSettings extends Component {
           keyboardShouldPersistTaps='always'
           contentContainerStyle={{ paddingBottom: 15 }}
         >
-          {this.displayLocation()}
           <View style={{ ...styles.containerStyle, margin: 15 }}>
             <TextField
               containerStyle={styles.textInputStyle}
@@ -179,7 +158,7 @@ const styles = {
     fontSize: 17,
     color: 'white',
     fontFamily: 'AvenirLTStd-Heavy',
-    padding: 3, 
+    padding: 3,
   },
   buttonStyle: {
     width: 0.4 * width,
