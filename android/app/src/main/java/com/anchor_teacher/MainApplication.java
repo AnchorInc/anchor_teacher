@@ -55,7 +55,6 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-          new MapsPackage(),
           new RNGestureHandlerPackage(),
           new LinearGradientPackage(),
           new FBSDKPackage(mCallbackManager),
@@ -67,7 +66,8 @@ public class MainApplication extends Application implements ReactApplication {
           new RNFirebaseFirestorePackage(),
           new RNFirebaseMessagingPackage(),
           new RNFirebaseNotificationsPackage(),
-          new AndroidKeyboardAdjustPackage()
+          new AndroidKeyboardAdjustPackage(),
+          new MapsPackage()
       );
     }
 
