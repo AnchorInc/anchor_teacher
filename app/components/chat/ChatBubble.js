@@ -16,10 +16,7 @@ class ChatBubble extends Component {
         <View style={styles[this.getDirection()].container}>
           <View style={styles.topContainerStyle}>
             <Text style={styles[this.getDirection()].infoStyle}>
-              {this.props.message.senderName}
-            </Text>
-            <Text style={styles[this.getDirection()].infoStyle}>
-              {moment(this.props.message.timeStamp).format('LT')}
+              {moment(this.props.message.timeStamp.toDate()).format('LT')}
             </Text>
           </View>
           <Text style={styles[this.getDirection()].message}>

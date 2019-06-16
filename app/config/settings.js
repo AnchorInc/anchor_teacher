@@ -55,6 +55,10 @@ export const gsigninConfig = {
   iosClientId: '489771714033-uskl634f838u27m0a01vsq7ea2uv6r9b.apps.googleusercontent.com',
 };
 
+export const geoAPI = {
+  key: 'AIzaSyCGttWR24ng1Y87ruWfjAcGCISGLKz8jUE',
+};
+
 // sign in methods
 export const signinMethods = {
   GOOGLE: 'google',

@@ -3,7 +3,8 @@ package com.anchor_teacher;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
-import com.arttitude360.reactnative.rngoogleplaces.RNGooglePlacesPackage;
+import com.airbnb.android.react.maps.MapsPackage;
+
 
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 
@@ -54,7 +55,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-          new RNGooglePlacesPackage(),
+          new MapsPackage(),
           new RNGestureHandlerPackage(),
           new LinearGradientPackage(),
           new FBSDKPackage(mCallbackManager),

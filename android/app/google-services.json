@@ -15,35 +15,27 @@
       },
       "oauth_client": [
         {
-          "client_id": "489771714033-po2rcm35q30h1vvo6ns2kac1fib1q96d.apps.googleusercontent.com",
+          "client_id": "489771714033-js24c9jucmrgfpise6ed3nnv6cc9n9qb.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.anchor",
-            "certificate_hash": "7e458b2720da1d02b4ba9005adf8c84494e4c404"
+            "certificate_hash": "ddb514d2eca7638f4e9fc825d70b3f4ec99a3e64"
           }
         },
         {
-          "client_id": "489771714033-pmjdesh7460oi9bcgan0ida0ra9b9305.apps.googleusercontent.com",
+          "client_id": "489771714033-8tc1rffdm4uofa2jmtlku9qtamcul7ir.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.anchor",
-            "certificate_hash": "b3dc876f13498ce5380ce1068ee12cf408407561"
+            "certificate_hash": "152b9d3790868a353682320ed1845c6858f3de94"
           }
         },
         {
-          "client_id": "489771714033-sh4c66k741hctc2vrvlfn4bsviiretii.apps.googleusercontent.com",
+          "client_id": "489771714033-l77hqi09i2e0bt41taulvm5gft0g0b09.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.anchor",
-            "certificate_hash": "cb2c7f1322ad514099f572c22a577f9229632e3f"
-          }
-        },
-        {
-          "client_id": "489771714033-h8rcam0eaf0p38ee8n30l4a0hfqieskf.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.anchor",
-            "certificate_hash": "1dfc3ec81414ad99cfdbcf65bc4e83eb75d3643e"
+            "certificate_hash": "ac9e95b3bd50a2e83ebdf0d091987bfbe461ba2c"
           }
         },
         {
@@ -53,18 +45,11 @@
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC2oUTuJYshRVPV4TJ_zjn7OBi55sm0MbQ"
-        },
-        {
           "current_key": "AIzaSyCGttWR24ng1Y87ruWfjAcGCISGLKz8jUE"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "489771714033-ej9vlft4gfm6enq8fsosh135vac9vnu7.apps.googleusercontent.com",
@@ -78,9 +63,6 @@
               }
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     },
@@ -93,11 +75,27 @@
       },
       "oauth_client": [
         {
-          "client_id": "489771714033-dqsv4qgl14ihnqsstdiief63rabkq5oh.apps.googleusercontent.com",
+          "client_id": "489771714033-35vp660bgd1sljkensmribrdcthgb8hq.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.anchor_teacher",
             "certificate_hash": "1dfc3ec81414ad99cfdbcf65bc4e83eb75d3643e"
+          }
+        },
+        {
+          "client_id": "489771714033-0ak26b9jto88gknkv0sk6h5huado41am.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.anchor_teacher",
+            "certificate_hash": "ddb514d2eca7638f4e9fc825d70b3f4ec99a3e64"
+          }
+        },
+        {
+          "client_id": "489771714033-r5nvavajkth5rdclhtkmns854gs314u7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.anchor_teacher",
+            "certificate_hash": "152b9d3790868a353682320ed1845c6858f3de94"
           }
         },
         {
@@ -107,18 +105,11 @@
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC2oUTuJYshRVPV4TJ_zjn7OBi55sm0MbQ"
-        },
-        {
           "current_key": "AIzaSyCGttWR24ng1Y87ruWfjAcGCISGLKz8jUE"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "489771714033-ej9vlft4gfm6enq8fsosh135vac9vnu7.apps.googleusercontent.com",
@@ -132,9 +123,6 @@
               }
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }
