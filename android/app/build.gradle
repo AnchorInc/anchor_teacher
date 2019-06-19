@@ -144,7 +144,6 @@ android {
 }
 
 dependencies {
-    implementation project(':react-native-maps')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
 
@@ -158,6 +157,8 @@ dependencies {
     implementation project(':react-native-fbsdk')
     implementation project(":react-native-android-keyboard-adjust")
     implementation project(':react-native-linear-gradient')
+    implementation project(':react-native-google-places')
+    implementation project(':react-native-maps')
 
     // Firebase dependencies
     implementation "com.google.firebase:firebase-core:16.0.4"

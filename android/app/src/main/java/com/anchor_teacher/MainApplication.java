@@ -3,6 +3,7 @@ package com.anchor_teacher;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.arttitude360.reactnative.rngoogleplaces.RNGooglePlacesPackage;
 
 import com.airbnb.android.react.maps.MapsPackage;
 
@@ -67,7 +68,8 @@ public class MainApplication extends Application implements ReactApplication {
           new RNFirebaseMessagingPackage(),
           new RNFirebaseNotificationsPackage(),
           new AndroidKeyboardAdjustPackage(),
-          new MapsPackage()
+          new MapsPackage(),
+          new RNGooglePlacesPackage()
       );
     }
 
