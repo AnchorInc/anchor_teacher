@@ -16,9 +16,30 @@ import { syncUser, getUser } from '../actions';
 import { actionTypes } from '../config';
 
 function* updateUserSaga(action) {
-  // update the user data on the cloud
+  // multi path update
+  const batch = firebase.firestore().batch();
+
   const ref = yield call(getUserRef);
-  yield call([ref, ref.update], action.user);
+  batch.update(ref, action.user);
+
+  try {
+    if (!action.user.displayName) return;
+    const chatRefArray = [];
+    const w = yield call([firebase.firestore(), firebase.firestore().collection], 'conversations');
+    const g = yield call([w, w.where], 'teacherId', '==', firebase.auth().currentUser.uid);
+    const chatRefs = yield call([g, g.get]);
+    chatRefs.forEach(chatRef => chatRefArray.push(chatRef.id));
+    console.log(chatRefArray);
+    chatRefArray.forEach((reference) => {
+      const chatRef = firebase.firestore().collection('conversations').doc(reference);
+      console.log(chatRef);
+      batch.update(chatRef, { teacherName: action.user.displayName });
+    });
+  } catch (error) {
+    console.log(error);
+  }
+
+  yield call([batch, batch.commit]);
 }
 
 function* userListenerSaga() {
