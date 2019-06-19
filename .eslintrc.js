@@ -38,5 +38,6 @@ module.exports = {
         "prefer-destructuring": 0,
         "react/no-access-state-in-setstate": 0,
         "import/no-cycle": 0,
+        "react/jsx-one-expression-per-line": 0,
     }
 };

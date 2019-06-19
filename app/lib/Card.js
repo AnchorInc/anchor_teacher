@@ -12,7 +12,6 @@ const Card = ({ children }) => {
 const styles = {
   containerStyle: {
     borderWidth: 0,
-    borderRadius: 4,
     elevation: 3,
     marginLeft: 8,
     marginRight: 8,

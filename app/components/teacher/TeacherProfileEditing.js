@@ -155,10 +155,6 @@ class TeacherProfileEditing extends Component {
     }
   }
 
-  updateRef(name, ref) {
-    this[name] = ref;
-  }
-
   clearText = () => {
     ['firstName', 'lastName', 'email', 'phone', 'subject']
     .map(name => ({ name, ref: this[name] }))
@@ -179,6 +175,10 @@ class TeacherProfileEditing extends Component {
       );
     }
     return null;
+  }
+
+  updateRef(name, ref) {
+    this[name] = ref;
   }
 
   render() {
@@ -355,7 +355,13 @@ class TeacherProfileEditing extends Component {
             </Picker>
           </View>
           <View style={styles.pillContainerStyle}>
-            <View style={{ width: 0.95 * width, justifyContent: 'space-between', alignItems: 'center', flexDirection: 'row' }}>
+            <View style={{
+              width: 0.95 * width,
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              flexDirection: 'row',
+              }}
+            >
               <Text style={styles.titleTextStyle}>Price Per Class</Text>
               <Text style={styles.textStyle}>₹{this.state.price}</Text>
             </View>
