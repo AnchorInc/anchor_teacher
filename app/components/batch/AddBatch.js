@@ -23,7 +23,7 @@ const { width, height } = Dimensions.get('window');
 
 // TODO: make it prettier and fix up saving the batch
 
-class BatchSettings extends Component {
+class AddBatch extends Component {
   constructor(props) {
     super(props);
 
@@ -320,4 +320,4 @@ const mapStateToProps = (state) => {
   return { user };
 };
 
-export default connect(mapStateToProps)(BatchSettings);
+export default connect(mapStateToProps)(AddBatch);

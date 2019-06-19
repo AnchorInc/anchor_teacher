@@ -1,5 +1,5 @@
 export { Chat, ChatsOverview } from './chat';
-export { Batches, BatchSettings } from './batch';
+export { Batches, AddBatch } from './batch';
 export { Login } from './login';
 export { Main } from './main';
 export { Settings } from './settings';

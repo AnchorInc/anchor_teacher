@@ -9,6 +9,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {
   AppSetup,
+  AddBatch,
   Chat,
   ChatsOverview,
   Batches,
@@ -17,7 +18,6 @@ import {
   TeacherProfile,
   TeacherProfileEditing,
   Settings,
-  BatchSettings,
   Schedule,
   Payment,
 } from '../components';
@@ -86,7 +86,7 @@ const NavStack = createStackNavigator({
   TeacherProfileEditing: { screen: TeacherProfileEditing },
   ChatsOverview: { screen: ChatsOverview },
   Chat: { screen: Chat },
-  BatchSettings: { screen: BatchSettings },
+  AddBatch: { screen: AddBatch },
 }, StackConfig);
 
 export const NavStackContainer = createAppContainer(NavStack);
@@ -104,12 +104,11 @@ const defaultGetStateForAction = MainStack.router.getStateForAction;
 MainStack.router.getStateForAction = (action, state) => {
   // Prevent access to the 'goback' nav prop
   if (
-    state &&
-    action.type === NavigationActions.BACK &&
-    (state.routes[state.index].routeName === 'AppSetup' ||
-      state.routes[state.index].routeName === 'Login' ||
-      state.routes[state.index].routeName === 'Main'
-    )
+    state
+    && action.type === NavigationActions.BACK
+    && (state.routes[state.index].routeName === 'AppSetup'
+    || state.routes[state.index].routeName === 'Login'
+    || state.routes[state.index].routeName === 'Main')
   ) { return null; }
 
   return defaultGetStateForAction(action, state);
