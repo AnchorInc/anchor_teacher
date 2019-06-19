@@ -15,4 +15,4 @@ const TextCheckbox = ({ title, onValueChange, value }) => {
   );
 };
 
-export { TextCheckbox };
+export default TextCheckbox;
