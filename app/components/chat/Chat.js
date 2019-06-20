@@ -53,7 +53,7 @@ class Chat extends Component {
       unread: true,
       senderName: this.props.user.displayName,
       senderID: this.props.user.uid,
-      recipientID: this.props.navigation.state.params.chat.uid,
+      recipientID: this.state.studentUID,
       recipientType: 'students',
       senderImageURL: this.props.user.photoURL,
     };

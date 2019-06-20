@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
 import SplashScreen from 'react-native-splash-screen';
 
-import { getUserType, startUserListener } from '../../actions';
+import { startUserListener } from '../../actions';
 
 // used to setup everything beforet the main app loads
 class AppSetup extends Component {
@@ -51,7 +51,6 @@ const mapStateToProps = (state) => {
 
 const mapFunctionsToProps = {
   startUserListener,
-  getUserType,
 };
 
 export default connect(mapStateToProps, mapFunctionsToProps)(AppSetup);

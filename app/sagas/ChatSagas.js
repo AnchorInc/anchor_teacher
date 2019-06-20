@@ -1,18 +1,14 @@
 import firebase from 'react-native-firebase';
 import { eventChannel } from 'redux-saga';
 import {
-  put,
-  takeLatest,
-  all,
-  call,
-  cancel,
-  take,
-  takeEvery,
+  put, takeLatest, all, call,
+  cancel, take, takeEvery,
 } from 'redux-saga/effects';
 
 import { actionTypes } from '../config';
 import { syncMessages, syncChats, createChat } from '../actions';
 
+// const uid = firebase.auth().currentUser.uid;
 
 function* messageListenerSaga(action) {
   const chatId = yield call(getChatId, action);
@@ -26,7 +22,7 @@ function* messageListenerSaga(action) {
 
     // if there are no messages then create a new chat
     if (messages.length === 0) {
-      yield put(createChat(action));
+      yield put(createChat(action.studentUID));
     }
 
     // update the redux store
@@ -52,16 +48,22 @@ function* chatListenerSaga() {
 
 function createChatSaga(action) {
   const ref = firebase.firestore().collection('conversations');
+  let user;
+  firebase.firestore().collection('teachers').doc(firebase.auth().currentUser.uid).get()
+  .then((data) => {
+    user = data.data();
+  });
 
-  firebase.firestore().collection('teachers')
+  console.log(action.user);
+  firebase.firestore().collection('students')
   .doc(action.teacherUID).onSnapshot((snapshot) => {
     ref.add({
-      teacherId: action.teacherUID,
-      teacherName: snapshot.data().displayName,
-      teacherPhotoURL: snapshot.data().photoURL,
-      studentId: firebase.auth().currentUser.uid,
-      studentName: firebase.auth().currentUser.displayName,
-      studentPhotoURL: firebase.auth().currentUser.photoURL,
+      teacherId: user.uid,
+      teacherName: user.displayName,
+      teacherPhotoURL: user.photoURL,
+      studentId: action.studentUID,
+      studentName: snapshot.data().displayName,
+      studentPhotoURL: snapshot.data().photoURL,
     });
   });
 }

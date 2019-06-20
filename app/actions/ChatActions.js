@@ -12,16 +12,16 @@ export const syncMessages = (messages) => {
   return { type: actionTypes.MESSAGE.SYNC, messages };
 };
 
-export const getChats = (id) => {
-  return { type: actionTypes.CHAT.GET, id };
+export const getChats = () => {
+  return { type: actionTypes.CHAT.GET };
 };
 
 export const syncChats = (chats) => {
   return { type: actionTypes.CHAT.SYNC, chats };
 };
 
-export const createChat = (action) => {
-  return { type: actionTypes.CHAT.CREATE, action };
+export const createChat = (studentUID) => {
+  return { type: actionTypes.CHAT.CREATE, studentUID };
 };
 
 export const deleteChat = (studentUID) => {
