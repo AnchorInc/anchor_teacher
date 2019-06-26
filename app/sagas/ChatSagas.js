@@ -2,7 +2,7 @@ import firebase from 'react-native-firebase';
 import { eventChannel } from 'redux-saga';
 import {
   put, takeLatest, all, call,
-  cancel, take, takeEvery,
+  cancel, take, takeEvery, cancelled,
 } from 'redux-saga/effects';
 
 import { actionTypes } from '../config';
@@ -17,18 +17,29 @@ function* messageListenerSaga(action) {
   .orderBy('timeStamp');
 
   const channel = yield call(messagesEventListener, ref);
-  while (firebase.auth().currentUser) {
-    const messages = yield take(channel);
 
-    // if there are no messages then create a new chat
-    if (messages.length === 0) {
-      yield put(createChat(action.studentUID));
+  try {
+    while (firebase.auth().currentUser) {
+      const messages = yield take(channel);
+
+      // if there are no messages then create a new chat
+      if (messages.length === 0) {
+        yield put(createChat(action.studentUID));
+      }
+
+      // update the redux store
+      yield put(syncMessages(messages));
+
+      if (yield take(actionTypes.AUTH.LOGOUT.SUCCESS)) {
+        yield cancel();
+        return;
+      }
     }
-
-    // update the redux store
-    yield put(syncMessages(messages));
+  } catch (error) {
+    console.log(error);
+  } finally {
+    if (yield cancelled()) channel.close();
   }
-  channel.close();
 }
 
 // gets all the chats for the user
@@ -38,12 +49,21 @@ function* chatListenerSaga() {
 
   const channel = yield call(chatEventListener, ref);
 
-  while (firebase.auth().currentUser) {
-    // get the data emitted from the channel
-    const chats = yield take(channel);
-    yield put(syncChats(chats));
+  try {
+    while (true) {
+      // get the data emitted from the channel
+      const chats = yield take(channel);
+      yield put(syncChats(chats));
+      if (yield take(actionTypes.AUTH.LOGOUT.SUCCESS)) {
+        yield cancel();
+        return;
+      }
+    }
+  } catch (error) {
+    console.log(error);
+  } finally {
+    if (yield cancelled()) channel.close();
   }
-  channel.close();
 }
 
 function createChatSaga(action) {
@@ -114,8 +134,8 @@ function* getChatId(action) {
 }
 
 const chatEventListener = (ref) => {
-  const channel = eventChannel((emitter) => {
-    return ref.collection('conversations')
+  return eventChannel((emitter) => {
+    const unsub = ref.collection('conversations')
     .where('teacherId', '==', firebase.auth().currentUser.uid)
     .onSnapshot((snapshot) => {
       const chats = [];
@@ -125,21 +145,21 @@ const chatEventListener = (ref) => {
       });
       emitter(chats);
     });
+    return unsub;
   });
-  return channel;
 };
 
 const messagesEventListener = (ref) => {
-  const channel = eventChannel((emitter) => {
-    return ref.onSnapshot((snapshot) => {
+  return eventChannel((emitter) => {
+    const unsub = ref.onSnapshot((snapshot) => {
       const messages = [];
       snapshot.docChanges.forEach((change) => {
         messages.push(change.doc.data());
       });
       emitter(messages);
     });
+    return unsub;
   });
-  return channel;
 };
 
 export function* watchChatRequests() {

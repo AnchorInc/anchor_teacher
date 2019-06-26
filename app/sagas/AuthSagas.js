@@ -1,10 +1,14 @@
 import { AsyncStorage } from 'react-native';
-import { put, takeLatest, all, call } from 'redux-saga/effects';
+import {
+  put, takeLatest, all, call,
+} from 'redux-saga/effects';
 import firebase from 'react-native-firebase';
 import { AccessToken, LoginManager } from 'react-native-fbsdk';
 import { GoogleSignin } from 'react-native-google-signin';
 
-import { showSpinner, loginSuccess, loginFail, syncUser } from '../actions';
+import {
+  showSpinner, loginSuccess, loginFail, syncUser,
+} from '../actions';
 import { actionTypes, signinMethods } from '../config';
 
 
@@ -69,14 +73,16 @@ function* logoutUser() {
       default:
         break;
     }
-    // sign out from firebase
-    yield call([auth, auth.signOut]);
+    yield put({ type: actionTypes.AUTH.LOGOUT.SUCCESS });
     // clear the async storage to prevent mixup with future logins
-    yield call([AsyncStorage, AsyncStorage.clear]);
+    AsyncStorage.clear();
     // clear user state to prevent mixup with future login
     yield put(syncUser(null));
+    // sign out from firebase
+    auth.signOut();
   } catch (error) {
     console.log(error);
+    yield put({ type: actionTypes.AUTH.LOGOUT.FAIL });
   }
 }
 

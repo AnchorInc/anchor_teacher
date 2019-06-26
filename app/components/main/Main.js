@@ -33,7 +33,7 @@ class Main extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (!nextProps.donePref) {
+    if (!nextProps.donePref && nextProps.user) {
       this.props.navigation.navigate('TeacherProfileEditing');
     }
   }
@@ -62,10 +62,12 @@ class Main extends Component {
 
 const mapStateToProps = (state) => {
   let donePref;
+  let user;
   if (state.user.user) {
+    user = state.user.user;
     donePref = state.user.user.donePref;
   }
-  return { donePref };
+  return { donePref, user };
 };
 
 export default connect(mapStateToProps, { showChatBadge })(Main);
