@@ -18,7 +18,6 @@ import {
   TeacherProfile,
   TeacherProfileEditing,
   Settings,
-  Schedule,
   Payment,
 } from '../components';
 
@@ -69,7 +68,6 @@ const TabNavigatorConfig = {
 
 export const Tabs = createBottomTabNavigator({
   Batches: { screen: Batches },
-  Schedule: { screen: Schedule },
   Payment: { screen: Payment },
   Settings: { screen: Settings },
 }, TabNavigatorConfig);
