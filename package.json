@@ -13,7 +13,7 @@
     "prop-types": "^15.6.2",
     "react": "16.6.3",
     "react-is": "^16.7.0",
-    "react-native": "^0.59.9",
+    "react-native": "^0.62.3",
     "react-native-android-keyboard-adjust": "^1.2.0",
     "react-native-dialogbox": "^0.6.10",
     "react-native-fbsdk": "^0.8.0",
