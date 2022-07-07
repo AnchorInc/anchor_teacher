@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "maps": "^0.3.3",
-    "moment": "^2.23.0",
+    "moment": "^2.29.4",
     "prop-types": "^15.6.2",
     "react": "16.6.3",
     "react-is": "^16.7.0",
